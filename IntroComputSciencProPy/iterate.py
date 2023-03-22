@@ -1,5 +1,13 @@
 total=0
-for c in '1,4,5':
+number=''
+numberInt=0
+for c in '12,13,10,4':
     if c!=',':
-        total=total+int(c)
+        number = number+c
+    elif c==',':
+        numberInt=int(number)
+        number=''
+        total = total+numberInt
+    print(numberInt)
+    print('el total ',total)
 print(total)
