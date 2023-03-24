@@ -5,5 +5,7 @@ def removeDups(l1,l2):
 
 lista1 = [1,2,3,4]
 lista2 = [1,2,5,6]
-removeDups(lista1,lista2)
-print('lista1=',lista1)
+#removeDups(lista1,lista2)
+#print('lista1=',lista1)
+mixed = [1,2,'a',4.0]
+print([x**2 for x in mixed if type(x)==int])
