@@ -16,5 +16,11 @@ def isPalindrome(s):
             return s[0]==s[-1] and isPal(s[1:-1])
     return isPal(toChars(s))
 
-string = input('ingrese texto a evaluar')
-print(isPalindrome(string))
+
+def testIsPalindrome():
+    print('Try dogGod')
+    print(isPalindrome('dogGod'))
+    print('Try dogGood')
+    print(isPalindrome('dogGood'))
+
+testIsPalindrome()
