@@ -4,7 +4,7 @@ def f(x):
     print('x=',x)
     return x
 x=3
-y=2
+#y=2
 z=f(x)
 print('z=',z)
 print('x=',x)
