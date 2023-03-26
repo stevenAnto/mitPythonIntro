@@ -1,8 +1,9 @@
 def copy(l1,l2):
+    newl=l1[:]
     """Assumes l1 l2 are listt, mutate l2 to be a copy of l1"""
     while len(l2)>0:
         l2.pop()
-    for e in l1:
+    for e in newl:
         l2.append(e)
 
 #test
