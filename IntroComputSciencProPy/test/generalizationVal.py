@@ -13,5 +13,6 @@ def readVal(valType,requestMsg,errorMsg):
             return (valType(val))
         except ValueError:
             print(val, errorMsg)
+            val =None
 
 val = readVal(int, 'Enter an integer:','is not an integer')
