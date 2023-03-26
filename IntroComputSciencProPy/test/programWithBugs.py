@@ -1,8 +1,8 @@
 def isPal(x):
     """Assumes x is a list 
     returns True is the list is a palindrome, False otherwise"""
-    temp = x
-    temp.reverse#error
+    temp = x[:]
+    temp.reverse()#error
     if temp ==x:
         print(temp,x)
         return True
