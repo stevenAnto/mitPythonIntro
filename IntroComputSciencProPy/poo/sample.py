@@ -1,7 +1,7 @@
 import datetime
 
 class Person(object):
-    
+
     def __init__(self,name):
         self.name = name
         try:
@@ -27,7 +27,7 @@ class Person(object):
         return (datetime.date.today()-self.birthday).days
 
     def __lt__(self,other):
-        
+
         if self.lastName == other.lastName:
             return self.name < other.name
         return self.lastName<other.lastName
@@ -50,6 +50,7 @@ class MITPerson(Person):
         return self.idNum < other.idNum
     def isStudent(self):
         return isinstance(self,Student)
+    #No apropiado para no estar agregando mas sublaxses
     #def isStudent(self):
         #return type(self)==Grad or type(self)==UG
 
@@ -72,6 +73,124 @@ class TransferStudent(Student):
         MITPerson.__init__(self,name)
         self.fromSchool ==fromSchool
 
+class Grades(object):
+    def __init__(self):
+        """Create empty grade book"""
+        self.students = []
+        self.grades ={}
+        self.isSorted = True
+
+    def addStudent(self, student):
+        """Assumes : studen is of tupe Studemnt
+        add studento to the grade book"""
+        if student in self.students:
+            raise ValueError('Duplicate student')
+        self.students.append(student)
+        self.grades[student.getIdNum()]=[]
+        self.isSorted = False
+
+    def addGrade(self, student,grade):
+        """Assuemes : grade is floar
+        Add grade to the list of grades for student"""
+        try:
+            self.grades[student.getIdNum()].append(grade)
+        except:
+            raise ValueError('Student not in maping')
+    def getGrades(self, student):
+        """Return a lsit of grades for student"""
+        try:#Retorna una copia de la lista
+            return self.grades[student.getIdNum()][:]
+        except:
+            raise ValueError('Student nor in  mapping')
+    def getStudents(self):
+        """Return a sorted list of the students in the grade book """
+        if not self.isSorted:
+            self.students.sort()
+            self.isSorted = True
+        return self.students[:]
+
+def gradeReport(course):
+    """Assumes  course is of type Grades"""
+    report = ''
+    for s in course.getStudents():
+        tot=0.0
+        numGrades=0
+        for g in course.getGrades(s):
+            tot +=g
+            numGrades +=1
+        try:
+            average = tot/numGrades
+            report = report +'\n'+str(s)+'\'s mean grade is '+str(average)
+        except:
+            report = report +'\n'+str(s)+'has no grades'
+    return report
+
+class infoHiding(object):
+    def __init__(self):
+        self.visible = 'Look at me'
+        self.__alsoVisible__ = 'Look at me too'
+        self.__invisible = 'Don\' look at me directly'
+    def printVisible(self):
+        print(self.visible)
+
+    def printInvisible(self):
+        print(self.__invisible)
+
+    def __printInvisible(self):
+        print(self.__invisible)
+
+    def __printInvisible__(self):
+        print(self.__invisible)
+
+test = infoHiding()
+print(test.visible)
+print(test.__alsoVisible__)
+print(test.__invisible)
+
+"""
+ug1 = UG('Jave Doe', 2014)
+ug2 = UG('John  Doe', 2015)
+ug3 = UG('David Henry', 2003)
+g1 = Grad('Billy Buckner')
+g2 = Grad('Bucky F.  Dent')
+sixHundred = Grades()
+sixHundred.addStudent(ug1)
+sixHundred.addStudent(ug2)
+sixHundred.addStudent(g1)
+sixHundred.addStudent(g2)
+
+for s in sixHundred.getStudents():
+    sixHundred.addGrade(s,75)
+
+sixHundred.addGrade(g1,25)
+sixHundred.addGrade(g2,100)
+sixHundred.addStudent(ug3)
+print(gradeReport(sixHundred))
+"""
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 p5 = Grad('Buzz Aldrin')
 p6 = UG('Buzz Aldrin',1984)
 print(p5,'is a graduate student is',type(p5)==Grad)
@@ -86,7 +205,7 @@ her.setBirthday(datetime.date(1958,8,16))
 """pList = [me,him,her]
 for p in pList:
     print(p)
-    
+
 pList.sort()
 for p in pList:
     print(p)"""
