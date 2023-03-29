@@ -143,9 +143,10 @@ class infoHiding(object):
         print(self.__invisible)
 
 test = infoHiding()
-print(test.visible)
-print(test.__alsoVisible__)
-print(test.__invisible)
+test.printInvisible()
+test.__printInvisible__()
+test.__printInvisible()
+
 
 """
 ug1 = UG('Jave Doe', 2014)
