@@ -19,4 +19,4 @@ def search(L,e):
         return False
     else:
         return bSearch(L,e,0,len(L))
-      
+
