@@ -107,7 +107,9 @@ class Grades(object):
         if not self.isSorted:
             self.students.sort()
             self.isSorted = True
-        return self.students[:]
+        for s in self.students:
+            yield s
+        #return self.students[:]
 
 def gradeReport(course):
     """Assumes  course is of type Grades"""
@@ -142,12 +144,18 @@ class infoHiding(object):
     def __printInvisible__(self):
         print(self.__invisible)
 
+
+book = Grades()
+book.addStudent(Grad('Julie'))
+book.addStudent(Grad('Charlie'))
+for s in book.getStudents():
+    print(s)
+"""
 test = infoHiding()
 test.printInvisible()
 test.__printInvisible__()
 test.__printInvisible()
-
-
+"""
 """
 ug1 = UG('Jave Doe', 2014)
 ug2 = UG('John  Doe', 2015)
