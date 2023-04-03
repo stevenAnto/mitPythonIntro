@@ -16,6 +16,7 @@ class Item(object):
 def value(item):
     return item.getValue()
 
+
 def weightIverse(Item):
     return 1.0/Item.getWeight()
 def density(item):
