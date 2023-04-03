@@ -28,6 +28,5 @@ def genPowerSet(L):
         powerSet.append(subset)
     return powerSet
 
-a = [1,2,3]
-print (genPowerSet(a))
+#print (genPowerSet(range(10)))
 
