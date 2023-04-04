@@ -19,8 +19,15 @@ def simWalks(numSteps, numTrials, dClass):
     for t in range(numTrials):
         f = Field.Field()
         f.addDrunk(Homer, origin)
-        distances.append(round(walk(f,Homer,numTrials),1))
+        distances.append(round(walk(f,Homer,numSteps),1))
 
     return distances
+#Trail with different walkLengths
+def drunkTest(walkLengths, numTrials, dClass):
+    for numSteps in walkLengths:
+        distances =  simWalks(numSteps,numTrials,dClass)
+        print(dClass.__name__,'random walk of ', numSteps, 'steps')
+        print('Mean  = ', round(sum(distances)/len(distances),4))
+        print('Max = ', max(distances),'Min', min(distances))
 
-print(simWalks(20,10, drunkUsual.UsualDrunk))
+drunkTest((0,1,10,100,1000,10000),100,drunkUsual.UsualDrunk)
