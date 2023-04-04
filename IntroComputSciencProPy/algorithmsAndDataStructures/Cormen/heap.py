@@ -2,6 +2,7 @@
 #Where parent(i)=celing (i/2)
 #leftChild(i)=2*i
 #rightChild(i)=2*i+1
+#mal uso de methodos y functions
 
 
 def leftChild(i):
@@ -27,6 +28,7 @@ def maxHeapify(vector,i):
         aux = vector[i]
         vector[i]=vector[largest]
         vector[largest]=aux
+        #function recursive
         maxHeapify(vector,largest)
 
 
