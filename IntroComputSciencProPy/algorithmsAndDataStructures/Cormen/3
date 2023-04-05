@@ -1,0 +1,44 @@
+import heap
+
+# O(lgn)
+def heapExtractMax(vector):
+    print('entro heapExtractMax',vector)
+    if len(vector)<0:
+        raise ValueError('heap underflow1')
+    maxi = vector[0]
+    vector[0]=vector[len(vector)-1]
+    vector.pop()
+    print('eliminando el ultimo',vector)
+    heap.maxHeapify(vector,0)
+    return maxi
+
+# O(lgn)
+def heapIncreaseKey(vector,i,key):
+    """i is the index where you put the value k
+    Assumes key>vector[i]"""
+    if key<vector[i]:
+        raise ValueError('new key is smaller than current key')
+    vector[i]=key
+    while i>1 and vector[heap.parent(i)]<vector[i]:
+        aux = vector[i]
+        vector[i]=vector[parent(i)]
+        vector[parent(i)]=aux
+        i= parent(i)
+
+
+# O(lgn)
+def maxHeapInsert(vector,key):
+    vector.append(float("inf"))
+    heapIncreaseKey(vector,len(vector)-1,key)
+    
+
+#few testincreaseKey
+#exercises 6.5.2
+a = [15,13,9,5,12,8,7,4,0,6,2,1]
+heapExtractMax(a)
+print(a)
+
+
+
+
+
