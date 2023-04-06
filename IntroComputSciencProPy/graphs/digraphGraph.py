@@ -1,5 +1,5 @@
-import nodeEdges 
 
+import nodeEdges 
 class Digraph(object):
     #nodes is a list of the nodes in the graph
     #edges is a dict mapping each node to a list of its children
@@ -39,6 +39,7 @@ class Graph(Digraph):
         rev = nodeEdges.Edge(edge.get_destination(), edge.get_source()) 
         Digraph.add_edge(self, rev)
 
+"""
 graph1 = Digraph()
 na=nodeEdges.Node('a')
 graph1.add_node(na)
@@ -53,4 +54,4 @@ graph1.add_edge(nodeEdges.Edge(na,nd))
 graph1.add_edge(nodeEdges.Edge(na,nc))
 print(graph1)
 
-
+"""
