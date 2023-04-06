@@ -3,7 +3,6 @@ import digraphGraph
 
 def print_path(path):
     """Assumes path is a list of nodes"""
-    print(path[0])
     result = ''
     for i in range(len(path)):
         result = result+str(path[i])

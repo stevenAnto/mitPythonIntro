@@ -39,6 +39,8 @@ class Graph(Digraph):
         rev = nodeEdges.Edge(edge.get_destination(), edge.get_source()) 
         Digraph.add_edge(self, rev)
 
+print('hola')
+
 """
 graph1 = Digraph()
 na=nodeEdges.Node('a')
