@@ -1,3 +1,0 @@
-import drunkUsual
-
-d1 = drunkUsual.UsualDrunk('Esteven')

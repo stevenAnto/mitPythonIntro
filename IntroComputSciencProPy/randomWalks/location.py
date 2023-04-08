@@ -18,7 +18,7 @@ class Location(object):
         xDist , yDist = self.x-ox, self.y-oy
         return (xDist**2+yDist**2)**0.5
 
-    def __str__(str):
+    def __str__(self):
         return '<' +str(self.x)+','+str(self.y)+'>'
 
 
