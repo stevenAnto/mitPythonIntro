@@ -6,7 +6,9 @@ def walk(f, d, numSteps ):
     start = f.getLoc(d)
     for s in range(numSteps):
         f.moveDrunk(d)
-    return start.distFrom(f.getLoc(d))
+    distance = start.distFrom(f.getLoc(d))
+    print('distance luego de ',numSteps, 'es: ',distance)
+    return distance
 
 def simWalks(numSteps, numTrials, dClass):
     """Assumes numSteps  an int >=0, numTrials an int >0

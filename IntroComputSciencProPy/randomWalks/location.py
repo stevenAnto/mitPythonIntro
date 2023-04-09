@@ -14,7 +14,7 @@ class Location(object):
         return self.y
 
     def distFrom(self, other):
-        ox, oy = other.y, other.y
+        ox, oy = other.x, other.y
         xDist , yDist = self.x-ox, self.y-oy
         return (xDist**2+yDist**2)**0.5
 

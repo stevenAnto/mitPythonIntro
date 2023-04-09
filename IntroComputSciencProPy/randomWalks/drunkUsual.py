@@ -24,13 +24,15 @@ class EW_drunk(Drunk):
     def takeStep(self):
         """Solo se mueve a los costados"""
         stepChoices = [(1.0,0.0),(-1.0,0.0)]
-        return random.choice(stepChoices)
+        elegido = random.choice(stepChoices)
+        #print('elegido',elegido)
+        return elegido
 
 def sim_all(drunk_kinds, walk_lengths, num_trials):
     for d_class in drunk_kinds:
         driver.drunkTest(walk_lengths, num_trials, d_class)
 
-sim_all((UsualDrunk,Cold_drunk, EW_drunk),(100,1000),(10))
+#sim_all((UsualDrunk,Cold_drunk, EW_drunk),(100,1000),(10))
 
 
 

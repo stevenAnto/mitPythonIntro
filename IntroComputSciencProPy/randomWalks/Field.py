@@ -15,7 +15,9 @@ class Field(object):
         xDist, yDist = drunk.takeStep()
         currentLocation = self.drunks[drunk]
             #use method of Location to get new location
-        self.drunks[drunk] = currentLocation.move(xDist,yDist)
+        destino =currentLocation.move(xDist,yDist)
+        #print('destino',destino)
+        self.drunks[drunk] = destino
 
     def getLoc(self, drunk):
         if drunk not in self.drunks:
