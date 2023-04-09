@@ -41,7 +41,39 @@ def regressToMean(numFlips, numTrials):
     pylab.legend(loc = 'best')
     pylab.show()
 
-regressToMean(15,40)
+def flipPlot(minExp, maxEp):
+    """Assumes minExp and maxEp positive integers; minExp<maxEp
+    Plots results of 2**minExp to 2**maxEp coin flips"""
+    ratios, diffs , xAxis = [], [],[]
+    for exp in range(minExp,maxEp+1):
+        xAxis.append(2**exp)
+    print('xAxis', xAxis)
+    for numFlips in xAxis:
+        numHeads = 0
+        for n in range(numFlips):
+            if r.choice(('H','T'))=='H':
+                numHeads += 1
+        numTails = numFlips - numHeads
+        try:
+            ratios.append(numHeads/numTails)
+            diffs.append(abs(numHeads-numTails))
+        except ZeroDivisionError:
+            continue
+    print('ratios',ratios)
+    print('diffs ',diffs)
+    pylab.title('Difference between heads and Tails')
+    pylab.xlabel('Number of flips')
+    pylab.ylabel('Abs(#Heads - #Tails)')
+    pylab.plot(xAxis,diffs,'k')
+    pylab.figure()
+    pylab.title('Heads/Tails Ratios')
+    pylab.xlabel('Number of Flips')
+    pylab.ylabel('#Heads/#Tails')
+    pylab.plot(xAxis,ratios,'k')
+
+r.seed(0)
+flipPlot(4,20)
+pylab.show()
 
 
 
