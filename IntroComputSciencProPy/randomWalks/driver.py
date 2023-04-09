@@ -30,11 +30,3 @@ def drunkTest(walkLengths, numTrials, dClass):
         print('Mean  = ', round(sum(distances)/len(distances),4))
         print('Max = ', max(distances),'Min', min(distances))
 
-terreno = Field.Field()
-loc1 = location.Location(0,0)
-d1 = drunkUsual.UsualDrunk('Esteven')
-terreno.addDrunk(d1,loc1)
-steps = 10
-
-walk(terreno, d1, steps)
-print(terreno.getLoc(d1))
