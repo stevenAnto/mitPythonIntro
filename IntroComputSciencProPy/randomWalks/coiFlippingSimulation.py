@@ -47,7 +47,7 @@ def flipPlot1(minExp,maxExp,numTrials):
 
 flipPlot1(4,20,20)
 pylab.show()
-
+pylab.savefigure('means anr std of ratios')
 
 
 
