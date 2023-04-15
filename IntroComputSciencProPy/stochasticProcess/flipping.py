@@ -65,11 +65,13 @@ def flipPlot(minExp, maxEp):
     pylab.xlabel('Number of flips')
     pylab.ylabel('Abs(#Heads - #Tails)')
     pylab.plot(xAxis,diffs,'ko')
+    pylab.semilogx()
     pylab.figure()
     pylab.title('Heads/Tails Ratios')
     pylab.xlabel('Number of Flips')
     pylab.ylabel('#Heads/#Tails')
     pylab.plot(xAxis,ratios,'ko')
+    pylab.semilogx()
 
 r.seed(0)
 flipPlot(4,20)
