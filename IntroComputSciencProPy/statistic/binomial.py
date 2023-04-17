@@ -16,6 +16,5 @@ def varies(n,numk):
         values.append(binomial(n,i,1/6))
     return values
 
-
 print(varies(10,(2,100)))
 
