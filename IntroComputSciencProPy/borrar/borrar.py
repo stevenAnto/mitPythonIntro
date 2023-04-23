@@ -1,0 +1,1 @@
+from ..randomWalks import variance

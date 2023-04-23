@@ -8,7 +8,7 @@ class stackLinked(object):
         nodo = linkedList.Node(value)
         nodo.next =self.top
         self.top = nodo
-    def pop(self):
+    def popL(self):
         if self.top==None:
             raise ValueError('underflow')
         else:

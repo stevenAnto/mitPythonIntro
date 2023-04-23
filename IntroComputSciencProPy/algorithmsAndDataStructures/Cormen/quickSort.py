@@ -13,7 +13,7 @@ def partition(vector,p,r):
     return i+1
 
 def quickSort(vector,p,r):
-    if p<=r:
+    if p<r:
         q = partition(vector,p,r)
         print('q',q)
         quickSort(vector,p,q-1)

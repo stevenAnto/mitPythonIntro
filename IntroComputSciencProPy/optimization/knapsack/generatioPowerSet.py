@@ -26,7 +26,8 @@ def genPowerSet(L):
             if binStre[j]=='1':
                 subset.append(L[j])
         powerSet.append(subset)
+        print(powerSet)
     return powerSet
 
-#print (genPowerSet(range(10)))
+print (genPowerSet(range(30)))
 
