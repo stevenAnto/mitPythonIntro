@@ -17,4 +17,4 @@ def checkPascal(numTrials):
                 break
     print('Probability of winning= ', numWins/numTrials)
 
-checkPascal(100000)
+#checkPascal(100000)
